@@ -10,6 +10,24 @@ html {
   font-size: 16px;
 }
 
+@media screen and (max-width: 87.5em) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media screen and (max-width: 81.25em) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 12px;
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -28,19 +46,23 @@ body {
 }
 
 header {
-  padding-top: 2.5rem;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 10;
-  grid-column: 2/12;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  padding: 1.5rem 0;
+  width: 85%;
+  margin: 0 auto;
+  background-color: yellowgreen;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr max-content;
-      grid-template-columns: auto 1fr -webkit-max-content;
-      grid-template-columns: auto 1fr max-content;
+  -ms-grid-columns: max-content 1fr max-content;
+      grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-columns: max-content 1fr max-content;
   z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .logo {
@@ -67,8 +89,7 @@ header nav ul li {
 
 header nav ul li a {
   padding: 1.25rem 1.5rem;
-  font-family: Rubik;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #ffffff;
@@ -88,32 +109,36 @@ header nav ul li:last-child a {
   -ms-grid-row: 1;
   -ms-grid-row-span: 4;
   grid-row: 1/5;
-  background-image: url(/src/asset/Scene.svg);
-  width: 81em;
+  background-image: url(/src/asset/back.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
   height: 950px;
   z-index: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: 8rem max-content 3.75rem max-content 13rem max-content;
-      grid-template-rows: 8rem -webkit-max-content 3.75rem -webkit-max-content 13rem -webkit-max-content;
-      grid-template-rows: 8rem max-content 3.75rem max-content 13rem max-content;
+  -ms-grid-rows: 8rem max-content 3.75rem max-content 11.25rem max-content;
+      grid-template-rows: 8rem -webkit-max-content 3.75rem -webkit-max-content 11.25rem -webkit-max-content;
+      grid-template-rows: 8rem max-content 3.75rem max-content 11.25rem max-content;
   color: #ffffff;
 }
 
 .hero h1 {
   -ms-grid-column: 2;
-  -ms-grid-column-span: 7;
-  grid-column: 2/9;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   font-family: "DM Serif Display", serif;
   font-size: 6.25rem;
+  line-height: 6.25rem;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0em;
+  z-index: 1;
 }
 
 .hero .btn {
@@ -129,18 +154,23 @@ header nav ul li:last-child a {
   -ms-grid-column-align: start;
       justify-self: start;
   color: #ffffff;
-  font-family: Rubik;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
+  z-index: 1;
 }
 
-.hero img {
+.hero .truck {
   -ms-grid-row: 6;
   -ms-grid-row-span: 1;
   grid-row: 6/7;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  background-image: url(/src/asset/mobel.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 37.5rem;
+  height: 24.75rem;
 }
 /*# sourceMappingURL=style.css.map */
