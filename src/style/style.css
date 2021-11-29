@@ -194,13 +194,11 @@ header nav ul li:last-child a {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  font-family: Rubik;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: 2.5rem;
   letter-spacing: 0.1em;
-  text-align: left;
   color: #ee4d47;
 }
 
@@ -240,6 +238,63 @@ header nav ul li:last-child a {
   grid-column: 2/3;
   grid-row: 1/-1;
   background-image: url(/src//asset/about.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 31.125rem;
+  height: 30rem;
+}
+
+.how-to {
+  grid-column: 3/-2;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7/8;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content auto;
+      grid-template-columns: -webkit-max-content auto;
+      grid-template-columns: max-content auto;
+  -ms-grid-rows: max-content 2.5rem auto;
+      grid-template-rows: -webkit-max-content 2.5rem auto;
+      grid-template-rows: max-content 2.5rem auto;
+}
+
+.how-to h2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0.1em;
+  color: #ee4d47;
+}
+
+.how-to .classic {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  color: #402b2b;
+}
+
+.how-to .customer-care {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  background-image: url(/src//asset/apply.svg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 31.125rem;
