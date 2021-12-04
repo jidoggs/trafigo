@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -45,10 +45,11 @@ a {
 body {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: max-content max-content max-content;
-  grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
-  grid-template-rows: max-content max-content max-content;
+      grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
+      grid-template-rows: max-content max-content max-content;
   grid-row-gap: 7.5rem;
   background-color: #fef8f5;
   font-family: "Rubik", sans-serif;
@@ -60,15 +61,15 @@ header {
   display: grid;
   background-color: transparent;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   z-index: 15;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .logo {
@@ -100,6 +101,8 @@ header nav ul li a {
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #ffffff;
+  border-bottom: 4px solid transparent;
+  cursor: pointer;
 }
 
 header nav ul li:last-child {
@@ -139,7 +142,7 @@ header .mobile-nav-btn {
     top: 0;
     left: 0;
     -webkit-transform: translate(-25%, -50%);
-    transform: translate(-25%, -50%);
+            transform: translate(-25%, -50%);
   }
   header .background {
     position: absolute;
@@ -165,7 +168,7 @@ header .mobile-nav-btn {
     left: 0;
     right: 0;
     -ms-grid-column-align: center;
-    justify-self: center;
+        justify-self: center;
     background-color: transparent;
     opacity: 0;
     visibility: hidden;
@@ -177,11 +180,11 @@ header .mobile-nav-btn {
   header nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
   header nav ul li a {
     padding: 1.25rem 1.5rem;
@@ -201,16 +204,13 @@ header .mobile-nav-btn {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
-  header .mobile-nav-icon,
-  header .mobile-nav-icon::before,
-  header .mobile-nav-icon::after {
+  header .mobile-nav-icon, header .mobile-nav-icon::before, header .mobile-nav-icon::after {
     width: 1.5rem;
     height: 0.1rem;
     background-color: #fff;
     display: inline-block;
   }
-  header .mobile-nav-icon::before,
-  header .mobile-nav-icon::after {
+  header .mobile-nav-icon::before, header .mobile-nav-icon::after {
     position: absolute;
     content: "";
     left: 0;
@@ -229,12 +229,12 @@ header .mobile-nav-btn {
   header #mobile-nav:checked + .mobile-nav-btn .mobile-nav-icon::before {
     top: 0;
     -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   header #mobile-nav:checked + .mobile-nav-btn .mobile-nav-icon::after {
     top: 0;
     -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   header #mobile-nav:checked ~ nav {
     display: block;
@@ -247,6 +247,10 @@ header .mobile-nav-btn {
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
   }
+}
+
+.activeNav {
+  border-bottom: 4px solid #ffffff;
 }
 
 .addBg {
@@ -269,10 +273,10 @@ header .mobile-nav-btn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   -ms-grid-rows: 11.875rem max-content 3.75rem max-content 11.25rem 20rem;
-  grid-template-rows: 11.875rem -webkit-max-content 3.75rem -webkit-max-content 11.25rem 20rem;
-  grid-template-rows: 11.875rem max-content 3.75rem max-content 11.25rem 20rem;
+      grid-template-rows: 11.875rem -webkit-max-content 3.75rem -webkit-max-content 11.25rem 20rem;
+      grid-template-rows: 11.875rem max-content 3.75rem max-content 11.25rem 20rem;
   color: #ffffff;
 }
 
@@ -335,7 +339,7 @@ header .mobile-nav-btn {
   background-color: #ee4d47;
   border-radius: 4px;
   -ms-grid-column-align: start;
-  justify-self: start;
+      justify-self: start;
   color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
@@ -357,9 +361,9 @@ header .mobile-nav-btn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   -ms-grid-rows: 4.625rem auto 2.5rem auto 4.375rem auto;
-  grid-template-rows: 4.625rem auto 2.5rem auto 4.375rem auto;
+      grid-template-rows: 4.625rem auto 2.5rem auto 4.375rem auto;
 }
 
 .about h2 {
@@ -450,15 +454,15 @@ header .mobile-nav-btn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   -ms-grid-rows: max-content 2.5rem auto;
-  grid-template-rows: -webkit-max-content 2.5rem auto;
-  grid-template-rows: max-content 2.5rem auto;
+      grid-template-rows: -webkit-max-content 2.5rem auto;
+      grid-template-rows: max-content 2.5rem auto;
 }
 
 .how-to h2 {
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   -ms-grid-column: 6;
   -ms-grid-column-span: 6;
   grid-column: 6/12;
@@ -517,11 +521,10 @@ header .mobile-nav-btn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
-  -ms-grid-rows: 6.375rem 7.625rem max-content 2.75rem 12.5rem 5rem 5.625rem
-    auto 13.875rem;
-  grid-template-rows: 6.375rem 7.625rem -webkit-max-content 2.75rem 12.5rem 5rem 5.625rem auto 13.875rem;
-  grid-template-rows: 6.375rem 7.625rem max-content 2.75rem 12.5rem 5rem 5.625rem auto 13.875rem;
+      grid-template-columns: inherit;
+  -ms-grid-rows: 6.375rem 7.625rem max-content 2.75rem 12.5rem 5rem 5.625rem auto 13.875rem;
+      grid-template-rows: 6.375rem 7.625rem -webkit-max-content 2.75rem 12.5rem 5rem 5.625rem auto 13.875rem;
+      grid-template-rows: 6.375rem 7.625rem max-content 2.75rem 12.5rem 5rem 5.625rem auto 13.875rem;
 }
 
 @media screen and (max-width: 41.875em) {
@@ -557,8 +560,8 @@ header .mobile-nav-btn {
   color: #ee4d47;
   z-index: 1;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .faq .classic {
@@ -576,8 +579,8 @@ header .mobile-nav-btn {
   line-height: 4.1875rem;
   letter-spacing: 0em;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media screen and (max-width: 28.5em) {
@@ -619,14 +622,15 @@ header .mobile-nav-btn {
   grid-row: 8/9;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
   grid-row-gap: 0.625rem;
   grid-column-gap: 1.25rem;
 }
 
 .faq .questions > li {
   -ms-flex-item-align: start;
-  align-self: flex-start;
+      align-self: flex-start;
   background-color: #ffffff;
   padding: 1.5625rem 7.17125rem;
   padding-left: 2.1875rem;
@@ -678,7 +682,7 @@ header .mobile-nav-btn {
   width: 1.25rem;
   height: 1.25rem;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .faq .answers {
@@ -696,10 +700,10 @@ header .mobile-nav-btn {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 3.75rem 13.125rem auto 4.375rem 11.25rem max-content 8.25rem;
-  grid-template-rows: 3.75rem 13.125rem auto 4.375rem 11.25rem -webkit-max-content 8.25rem;
-  grid-template-rows: 3.75rem 13.125rem auto 4.375rem 11.25rem max-content 8.25rem;
+      grid-template-rows: 3.75rem 13.125rem auto 4.375rem 11.25rem -webkit-max-content 8.25rem;
+      grid-template-rows: 3.75rem 13.125rem auto 4.375rem 11.25rem max-content 8.25rem;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   align-self: flex-end;
 }
 
@@ -714,7 +718,7 @@ header .mobile-nav-btn {
 @media screen and (max-width: 26.5625em) {
   .contact {
     -ms-grid-rows: 14.625rem 5.125rem auto 2rem auto 20rem;
-    grid-template-rows: 14.625rem 5.125rem auto 2rem auto 20rem;
+        grid-template-rows: 14.625rem 5.125rem auto 2rem auto 20rem;
   }
 }
 
@@ -733,8 +737,8 @@ header .mobile-nav-btn {
   line-height: 1.875rem;
   border-left: 0.625rem solid #ed4d47;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media screen and (max-width: 26.5625em) {
@@ -753,16 +757,14 @@ header .mobile-nav-btn {
   background-color: #ffffff;
   border-radius: 10px;
   -webkit-box-shadow: 0px 1.25rem 2.5rem 0px #ee4d471a;
-  box-shadow: 0px 1.25rem 2.5rem 0px #ee4d471a;
+          box-shadow: 0px 1.25rem 2.5rem 0px #ee4d471a;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  -ms-grid-rows: 3.25rem [label1-start] max-content [label1-end] 0.625rem
-    [input1-start] max-content [input1-end] 1.875rem [label2-start] max-content
-    [label2-end] 0.625rem [input2-start] max-content [input2-end] 30px
-    [btn-start] max-content [btn-end] 3.25rem;
-  grid-template-rows: 3.25rem [label1-start] -webkit-max-content [label1-end] 0.625rem [input1-start] -webkit-max-content [input1-end] 1.875rem [label2-start] -webkit-max-content [label2-end] 0.625rem [input2-start] -webkit-max-content [input2-end] 30px [btn-start] -webkit-max-content [btn-end] 3.25rem;
-  grid-template-rows: 3.25rem [label1-start] max-content [label1-end] 0.625rem [input1-start] max-content [input1-end] 1.875rem [label2-start] max-content [label2-end] 0.625rem [input2-start] max-content [input2-end] 30px [btn-start] max-content [btn-end] 3.25rem;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: 3.25rem [label1-start] max-content [label1-end] 0.625rem [input1-start] max-content [input1-end] 1.875rem [label2-start] max-content [label2-end] 0.625rem [input2-start] max-content [input2-end] 30px [btn-start] max-content [btn-end] 3.25rem;
+      grid-template-rows: 3.25rem [label1-start] -webkit-max-content [label1-end] 0.625rem [input1-start] -webkit-max-content [input1-end] 1.875rem [label2-start] -webkit-max-content [label2-end] 0.625rem [input2-start] -webkit-max-content [input2-end] 30px [btn-start] -webkit-max-content [btn-end] 3.25rem;
+      grid-template-rows: 3.25rem [label1-start] max-content [label1-end] 0.625rem [input1-start] max-content [input1-end] 1.875rem [label2-start] max-content [label2-end] 0.625rem [input2-start] max-content [input2-end] 30px [btn-start] max-content [btn-end] 3.25rem;
 }
 
 @media screen and (max-width: 26.5625em) {
@@ -789,8 +791,7 @@ header .mobile-nav-btn {
   grid-row: label2-start/label2-end;
 }
 
-.contact form input[type="text"],
-.contact form input[type="email"] {
+.contact form input[type="text"], .contact form input[type="email"] {
   grid-column: 2/-2;
   border-radius: 5px;
   border: 1px solid #ee4d4780;
@@ -800,32 +801,27 @@ header .mobile-nav-btn {
   line-height: 2.5rem;
   padding: 0.75rem 2.5rem;
   -webkit-box-shadow: 0px 1.25rem 2.5rem 0px #ee4d4733;
-  box-shadow: 0px 1.25rem 2.5rem 0px #ee4d4733;
+          box-shadow: 0px 1.25rem 2.5rem 0px #ee4d4733;
 }
 
-.contact form input[type="text"]:focus,
-.contact form input[type="email"]:focus {
+.contact form input[type="text"]:focus, .contact form input[type="email"]:focus {
   border: 0.125rem solid #ee4d47;
   outline: 0.125rem solid #ee4d47;
 }
 
-.contact form input[type="text"]::-webkit-input-placeholder,
-.contact form input[type="email"]::-webkit-input-placeholder {
+.contact form input[type="text"]::-webkit-input-placeholder, .contact form input[type="email"]::-webkit-input-placeholder {
   font-weight: 300;
 }
 
-.contact form input[type="text"]:-ms-input-placeholder,
-.contact form input[type="email"]:-ms-input-placeholder {
+.contact form input[type="text"]:-ms-input-placeholder, .contact form input[type="email"]:-ms-input-placeholder {
   font-weight: 300;
 }
 
-.contact form input[type="text"]::-ms-input-placeholder,
-.contact form input[type="email"]::-ms-input-placeholder {
+.contact form input[type="text"]::-ms-input-placeholder, .contact form input[type="email"]::-ms-input-placeholder {
   font-weight: 300;
 }
 
-.contact form input[type="text"]::placeholder,
-.contact form input[type="email"]::placeholder {
+.contact form input[type="text"]::placeholder, .contact form input[type="email"]::placeholder {
   font-weight: 300;
 }
 
@@ -860,11 +856,11 @@ footer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: inherit;
-  grid-template-columns: inherit;
+      grid-template-columns: inherit;
   grid-row-gap: 10.625rem;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 26.5625em) {
@@ -927,8 +923,8 @@ footer p {
   line-height: 1.875rem;
   color: #402b2b;
   -ms-flex-item-align: start;
-  -ms-grid-row-align: start;
-  align-self: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
 
 @media screen and (max-width: 40.625em) {
@@ -959,8 +955,8 @@ footer .socials {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 0.75rem;
 }
 
@@ -1002,16 +998,16 @@ footer ul {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (max-width: 26.5625em) {
   footer ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   footer ul li {
     margin-bottom: 1rem;
@@ -1021,3 +1017,4 @@ footer ul {
 footer ul a {
   color: #ffffff;
 }
+/*# sourceMappingURL=style.css.map */

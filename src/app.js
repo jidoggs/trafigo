@@ -1,9 +1,27 @@
+const navList = ["ABOUT", "HOW TO", "FAQS", "CONTACT US"];
+
+navList.forEach((item) => {
+  let li = document.createElement("li");
+  let listItem = document.createElement("a");
+  listItem.innerText = item;
+  li.appendChild(listItem);
+  document.querySelector("#navy").appendChild(li);
+});
+
 const scrollHandler = (e) => {
   e.preventDefault();
   let values = e.target.innerText;
   if (document.getElementById("mobile-nav").checked === true) {
     document.getElementById("mobile-nav").checked = false;
   }
+  document.querySelectorAll("#navy > li > a").forEach((el) => {
+    if (el.innerText === values) {
+      el.classList.add("activeNav");
+    } else {
+      el.classList.remove("activeNav");
+    }
+  });
+
   window.scrollTo({
     top:
       (values === "ABOUT"
@@ -28,6 +46,9 @@ const scrollHandler = (e) => {
 const headerScrollHandler = (e) => {
   if (window.scrollY <= 50) {
     document.querySelector("header").style.backgroundColor = "transparent";
+    document.querySelectorAll("#navy > li > a").forEach((el) => {
+      el.classList.remove("activeNav");
+    });
   } else {
     document.querySelector("header").style.backgroundColor = "#EE4D47";
   }
