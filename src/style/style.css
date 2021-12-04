@@ -260,7 +260,7 @@ header .mobile-nav-btn {
   -ms-grid-row: 1;
   -ms-grid-row-span: 4;
   grid-row: 1/5;
-  background-image: url(/src/asset/heroBg.svg);
+  background-image: url(../asset/heroBg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 0;
@@ -276,7 +276,7 @@ header .mobile-nav-btn {
 
 @media screen and (max-width: 42.5em) {
   .hero {
-    background-image: url(/src/asset/mobileBg.svg);
+    background-image: url(../asset/mobileBg.svg);
     background-size: cover;
     background-position: right;
   }
@@ -411,7 +411,7 @@ header .mobile-nav-btn {
   -ms-grid-column-span: 6;
   grid-column: 6/12;
   grid-row: 1/-1;
-  background-image: url(/src//asset/about.svg);
+  background-image: url(../asset/about.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -489,7 +489,7 @@ header .mobile-nav-btn {
   -ms-grid-column-span: 5;
   grid-column: 1/6;
   grid-row: 1/-1;
-  background-image: url(/src//asset/apply.svg);
+  background-image: url(../asset/apply.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -600,7 +600,7 @@ header .mobile-nav-btn {
   -ms-grid-row: 2;
   -ms-grid-row-span: 5;
   grid-row: 2/7;
-  background-image: url(/src/asset/faq.svg);
+  background-image: url(../asset/faq.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
@@ -672,7 +672,7 @@ header .mobile-nav-btn {
 .faq .questions > li::before {
   content: "";
   position: absolute;
-  background-image: url(/src/asset/+.svg);
+  background-image: url(../asset/+.svg);
   background-size: contain;
   right: 2.1875rem;
   top: 50%;
@@ -691,7 +691,7 @@ header .mobile-nav-btn {
   -ms-grid-row: 8;
   -ms-grid-row-span: 6;
   grid-row: 8/14;
-  background-image: url(/src/asset/footerBg.svg);
+  background-image: url(../asset/footerBg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   display: -ms-grid;
@@ -979,15 +979,15 @@ footer .socials .instagram {
 }
 
 footer .socials .facebook {
-  background-image: url(/src/asset/f.svg);
+  background-image: url(../asset/f.svg);
 }
 
 footer .socials .twitter {
-  background-image: url(/src/asset/t.svg);
+  background-image: url(../asset/t.svg);
 }
 
 footer .socials .instagram {
-  background-image: url(/src/asset/i.svg);
+  background-image: url(../asset/i.svg);
 }
 
 footer ul {

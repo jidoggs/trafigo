@@ -217,13 +217,13 @@ header {
 .hero {
   grid-column: 1/-1;
   grid-row: 1/5;
-  background-image: url(/src/asset/heroBg.svg);
+  background-image: url(../asset/heroBg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 0;
 
   @media screen and (max-width: 42.5em) {
-    background-image: url(/src/asset/mobileBg.svg);
+    background-image: url(../asset/mobileBg.svg);
     background-size: cover;
     background-position: right;
   }
@@ -256,6 +256,14 @@ header {
       font-size: 5.25rem;
       line-height: 8.25rem;
     }
+    // @media screen and (max-width: 29.5em) {
+    //   font-size: 7.25rem;
+    //   line-height: 7.25rem;
+    // }
+    // @media screen and (max-width: 26.125em) {
+    //   font-size: 6.25rem;
+    //   line-height: 6.25rem;
+    // }
   }
   .btn {
     grid-row: 4/5;
@@ -318,7 +326,7 @@ header {
   .delivery-man {
     grid-column: 6/12;
     grid-row: 1/-1;
-    background-image: url(/src//asset/about.svg);
+    background-image: url(../asset/about.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -370,7 +378,7 @@ header {
     grid-column: 1/6;
     grid-row: 1/-1;
 
-    background-image: url(/src//asset/apply.svg);
+    background-image: url(../asset/apply.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -441,7 +449,7 @@ header {
   .man-thinking {
     grid-column: 6/12;
     grid-row: 2/7;
-    background-image: url(/src/asset/faq.svg);
+    background-image: url(../asset/faq.svg);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
@@ -487,7 +495,7 @@ header {
       &::before {
         content: "";
         position: absolute;
-        background-image: url(/src/asset/+.svg);
+        background-image: url(../asset/+.svg);
         background-size: contain;
         right: 2.1875rem;
         top: 50%;
@@ -506,7 +514,7 @@ header {
   grid-column: 1/-2;
   grid-row: 8/14;
 
-  background-image: url(/src/asset/footerBg.svg);
+  background-image: url(../asset/footerBg.svg);
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -683,13 +691,13 @@ footer {
     }
 
     .facebook {
-      background-image: url(/src/asset/f.svg);
+      background-image: url(../asset/f.svg);
     }
     .twitter {
-      background-image: url(/src/asset/t.svg);
+      background-image: url(../asset/t.svg);
     }
     .instagram {
-      background-image: url(/src/asset/i.svg);
+      background-image: url(../asset/i.svg);
     }
   }
 
