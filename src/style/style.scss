@@ -16,12 +16,12 @@ html {
   @media screen and (max-width: 65em) {
     font-size: 11px;
   }
-  @media screen and (max-width: 53em) {
+  @media screen and (max-width: 55em) {
     font-size: 10px;
   }
-  @media screen and (max-width: 50em) {
-    font-size: 8px;
-  }
+  //   @media screen and (max-width: 48em) {
+  //     font-size: 9px;
+  //   }
 }
 ul {
   list-style: none;
@@ -43,9 +43,9 @@ body {
 header {
   padding: 1.5rem 0;
   display: grid;
-  background-color: yellowgreen;
+  background-color: transparent;
   grid-template-columns: inherit;
-  z-index: 5;
+  z-index: 15;
   position: fixed;
   left: 0;
   right: 0;
@@ -57,7 +57,7 @@ header {
   }
   nav {
     grid-column: 7/12;
-    justify-self: flex-start;
+    justify-self: flex-end;
     ul {
       display: flex;
 
@@ -98,7 +98,7 @@ header {
       &::before {
         content: "";
         position: absolute;
-        // background-color: #ee4d47;
+        background-color: #ee4d47;
         border-radius: 50%;
         width: 3.5rem;
         height: 3.5rem;
@@ -106,6 +106,20 @@ header {
         left: 0;
         transform: translate(-25%, -50%);
       }
+    }
+    .background {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ee4d47;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.1s ease;
     }
     nav {
       display: none;
@@ -115,11 +129,12 @@ header {
       left: 0;
       right: 0;
       justify-self: center;
-      background-color: yellowgreen;
+      background-color: transparent;
       opacity: 0;
       visibility: hidden;
       height: 100vh;
       transition: all ease 0.5s;
+      z-index: 12;
 
       ul {
         flex-direction: column;
@@ -188,12 +203,23 @@ header {
       opacity: 1;
       visibility: visible;
     }
+    #mobile-nav:checked ~ .background {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease;
+    }
   }
+}
+.addBg {
+  background-color: #ee4d47;
+}
+.removeBg {
+  background-color: transparent;
 }
 .hero {
   grid-column: 1/-1;
   grid-row: 1/5;
-  background-image: url(/src/asset/back.svg);
+  background-image: url(/src/asset/heroBg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 0;
@@ -206,13 +232,12 @@ header {
 
   display: grid;
   grid-template-columns: inherit;
-  grid-template-rows: 8rem max-content 3.75rem max-content 11.25rem 24.625rem;
-  grid-template-rows: 11.875rem max-content 3.75rem max-content 11.25rem 24.625rem;
+  grid-template-rows: 11.875rem max-content 3.75rem max-content 11.25rem 20rem;
   color: #ffffff;
 
-  @media screen and (max-width: 53em) {
-    grid-template-rows: 11.875rem 32rem 3.75rem max-content 11.25rem;
-  }
+  //   @media screen and (max-width: 53em) {
+  //     grid-template-rows: 11.875rem 32rem 3.75rem max-content 11.25rem;
+  //   }
   h1 {
     grid-column: 2/8;
     grid-row: 2/3;
@@ -223,27 +248,31 @@ header {
     font-weight: 400;
     letter-spacing: 0em;
     z-index: 1;
+    @media screen and (max-width: 49.875em) {
+      font-size: 5.25rem;
+      line-height: 5.25rem;
+    }
     @media screen and (max-width: 42.5em) {
       grid-column: 2/12;
-      font-size: 10.25rem;
+      font-size: 8.25rem;
       line-height: 10.25rem;
     }
-    @media screen and (max-width: 36.625em) {
-      font-size: 8.25rem;
-      line-height: 8.25rem;
-    }
-    @media screen and (max-width: 29.5em) {
-      font-size: 7.25rem;
-      line-height: 7.25rem;
-    }
-    @media screen and (max-width: 26.125em) {
-      font-size: 6.25rem;
-      line-height: 6.25rem;
-    }
+    // @media screen and (max-width: 36.625em) {
+    //   font-size: 8.25rem;
+    //   line-height: 8.25rem;
+    // }
+    // @media screen and (max-width: 29.5em) {
+    //   font-size: 7.25rem;
+    //   line-height: 7.25rem;
+    // }
+    // @media screen and (max-width: 26.125em) {
+    //   font-size: 6.25rem;
+    //   line-height: 6.25rem;
+    // }
   }
   .btn {
     grid-row: 4/5;
-    grid-column: 2/7;
+    grid-column: 2/8;
     padding: 1.25rem 1.5rem;
     background-color: #ee4d47;
     border-radius: 4px;
@@ -255,16 +284,6 @@ header {
     z-index: 1;
     @media screen and (max-width: 42.5em) {
       font-size: 2rem;
-    }
-  }
-  .truck {
-    grid-row: 6/7;
-    grid-column: 1/6;
-    background-image: url(/src/asset/mobel.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    @media screen and (max-width: 53em) {
-      display: none;
     }
   }
 }
@@ -438,10 +457,13 @@ header {
     grid-row: 8/9;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(12, 8rem);
     grid-row-gap: 0.625rem;
     grid-column-gap: 1.25rem;
 
     & > li {
+      align-self: center;
+
       &:nth-child(even) {
         grid-column: 5/9;
         @media screen and (max-width: 30em) {
@@ -482,6 +504,7 @@ header {
   }
   .answers {
     display: none;
+    // background-color: yellow;
   }
 }
 
