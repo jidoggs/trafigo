@@ -150,6 +150,7 @@ header .mobile-nav-btn {
     right: 0;
     bottom: 0;
     background-color: #ee4d47;
+    visibility: hidden;
     width: 100vw;
     height: 100vh;
     z-index: -1;
@@ -314,13 +315,20 @@ header .mobile-nav-btn {
   }
 }
 
+@media screen and (max-width: 28.25em) {
+  .hero h1 {
+    font-size: 5.25rem;
+    line-height: 8.25rem;
+  }
+}
+
 .hero .btn {
   -ms-grid-row: 4;
   -ms-grid-row-span: 1;
   grid-row: 4/5;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 6;
-  grid-column: 2/8;
+  -ms-grid-column-span: 7;
+  grid-column: 2/9;
   padding: 1.25rem 1.5rem;
   background-color: #ee4d47;
   border-radius: 4px;
@@ -354,8 +362,8 @@ header .mobile-nav-btn {
 
 .about h2 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
@@ -365,6 +373,7 @@ header .mobile-nav-btn {
   line-height: 2.5rem;
   letter-spacing: 0.1em;
   color: #ee4d47;
+  justify-self: flex-start;
 }
 
 .about .classic {
@@ -449,8 +458,8 @@ header .mobile-nav-btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
   -ms-grid-column: 6;
-  -ms-grid-column-span: 3;
-  grid-column: 6/9;
+  -ms-grid-column-span: 6;
+  grid-column: 6/12;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -566,6 +575,22 @@ header .mobile-nav-btn {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media screen and (max-width: 28.5em) {
+  .faq .classic {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1/9;
+  }
+}
+
+@media screen and (max-width: 21.125em) {
+  .faq .classic {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 10;
+    grid-column: 1/11;
+  }
 }
 
 .faq .man-thinking {

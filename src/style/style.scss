@@ -19,9 +19,6 @@ html {
   @media screen and (max-width: 55em) {
     font-size: 10px;
   }
-  //   @media screen and (max-width: 48em) {
-  //     font-size: 9px;
-  //   }
 }
 ul {
   list-style: none;
@@ -115,6 +112,7 @@ header {
       right: 0;
       bottom: 0;
       background-color: #ee4d47;
+      visibility: hidden;
       width: 100vw;
       height: 100vh;
       z-index: -1;
@@ -235,9 +233,6 @@ header {
   grid-template-rows: 11.875rem max-content 3.75rem max-content 11.25rem 20rem;
   color: #ffffff;
 
-  //   @media screen and (max-width: 53em) {
-  //     grid-template-rows: 11.875rem 32rem 3.75rem max-content 11.25rem;
-  //   }
   h1 {
     grid-column: 2/8;
     grid-row: 2/3;
@@ -257,22 +252,14 @@ header {
       font-size: 8.25rem;
       line-height: 10.25rem;
     }
-    // @media screen and (max-width: 36.625em) {
-    //   font-size: 8.25rem;
-    //   line-height: 8.25rem;
-    // }
-    // @media screen and (max-width: 29.5em) {
-    //   font-size: 7.25rem;
-    //   line-height: 7.25rem;
-    // }
-    // @media screen and (max-width: 26.125em) {
-    //   font-size: 6.25rem;
-    //   line-height: 6.25rem;
-    // }
+    @media screen and (max-width: 28.25em) {
+      font-size: 5.25rem;
+      line-height: 8.25rem;
+    }
   }
   .btn {
     grid-row: 4/5;
-    grid-column: 2/8;
+    grid-column: 2/9;
     padding: 1.25rem 1.5rem;
     background-color: #ee4d47;
     border-radius: 4px;
@@ -297,7 +284,7 @@ header {
   grid-template-rows: 4.625rem auto 2.5rem auto 4.375rem auto;
 
   h2 {
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-row: 2/3;
     font-size: 1.5rem;
     font-style: normal;
@@ -305,6 +292,7 @@ header {
     line-height: 2.5rem;
     letter-spacing: 0.1em;
     color: #ee4d47;
+    justify-self: flex-start;
   }
   .classic {
     grid-column: 1/6;
@@ -360,7 +348,7 @@ header {
 
   h2 {
     align-self: flex-end;
-    grid-column: 6/9;
+    grid-column: 6/12;
     grid-row: 1/2;
     font-size: 1.5rem;
     font-style: normal;
@@ -441,6 +429,13 @@ header {
     line-height: 4.1875rem;
     letter-spacing: 0em;
     align-self: center;
+
+    @media screen and (max-width: 28.5em) {
+      grid-column: 1/9;
+    }
+    @media screen and (max-width: 21.125em) {
+      grid-column: 1/11;
+    }
   }
 
   .man-thinking {
@@ -504,7 +499,6 @@ header {
   }
   .answers {
     display: none;
-    // background-color: yellow;
   }
 }
 
