@@ -3,7 +3,7 @@ const navList = ["ABOUT", "HOW TO", "FAQS", "CONTACT US"];
 navList.forEach((item) => {
   let li = document.createElement("li");
   let listItem = document.createElement("a");
-  listItem.innerText = item;
+  listItem.innerHTML = item;
   li.appendChild(listItem);
   document.querySelector("#navy").appendChild(li);
 });
@@ -44,16 +44,20 @@ const scrollHandler = (e) => {
 };
 
 const headerScrollHandler = (e) => {
-  if (window.scrollY <= 50) {
-    document.querySelector("header").style.backgroundColor = "transparent";
+  if (window.scrollY === 0) {
     document.querySelectorAll("#navy > li > a").forEach((el) => {
       el.classList.remove("activeNav");
     });
+  }
+
+  if (window.scrollY <= 1) {
+    document.querySelector("header").classList.add("removeBg");
+    document.querySelector("header").classList.remove("addBg");
   } else {
-    document.querySelector("header").style.backgroundColor = "#EE4D47";
+    document.querySelector("header").classList.remove("removeBg");
+    document.querySelector("header").classList.add("addBg");
   }
 };
-
 let day = new Date();
 document.getElementById("cp-year").innerText = day.getFullYear();
 

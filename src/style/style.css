@@ -186,6 +186,9 @@ header .mobile-nav-btn {
         -ms-flex-align: end;
             align-items: flex-end;
   }
+  header nav ul li {
+    margin-bottom: 3rem;
+  }
   header nav ul li a {
     padding: 1.25rem 1.5rem;
     font-size: 5rem;
@@ -251,6 +254,8 @@ header .mobile-nav-btn {
 
 .activeNav {
   border-bottom: 4px solid #ffffff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .addBg {
