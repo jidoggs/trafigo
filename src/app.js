@@ -1,4 +1,5 @@
-const navList = ["ABOUT", "HOW TO", "FAQS", "CONTACT US"];
+const navList = ["ABOUT US", "HOW TO APPLY", "FAQS", "CONTACT US"];
+const sectionListElements = document.querySelectorAll("[id^=section-]");
 
 navList.forEach((item) => {
   let li = document.createElement("li");
@@ -14,31 +15,22 @@ const scrollHandler = (e) => {
   if (document.getElementById("mobile-nav").checked === true) {
     document.getElementById("mobile-nav").checked = false;
   }
-  document.querySelectorAll("#navy > li > a").forEach((el) => {
-    if (el.innerText === values) {
-      el.classList.add("activeNav");
-    } else {
-      el.classList.remove("activeNav");
-    }
-  });
+
+  const clickScroll = (val) => {
+    let positionObj = {};
+    sectionListElements.forEach((el) => {
+      if (val === el.querySelector("h2").innerText) {
+        positionObj.top = el.offsetTop - 100;
+        positionObj.left = el.offsetLeft;
+      }
+    });
+
+    return positionObj;
+  };
 
   window.scrollTo({
-    top:
-      (values === "ABOUT"
-        ? document.getElementById("section-about").offsetTop
-        : values === "HOW TO"
-        ? document.getElementById("section-how").offsetTop
-        : values === "FAQS"
-        ? document.getElementById("section-faq").offsetTop
-        : document.getElementById("section-contact").offsetTop) - 100,
-    left:
-      values === "ABOUT"
-        ? document.getElementById("section-about").offsetLeft
-        : values === "HOW TO"
-        ? document.getElementById("section-how").offsetLeft
-        : values === "FAQS"
-        ? document.getElementById("section-faq").offsetLeft
-        : document.getElementById("section-contact").offsetLeft,
+    top: clickScroll(values).top,
+    left: clickScroll(values).left,
     behavior: "smooth",
   });
 };
@@ -49,13 +41,28 @@ const headerScrollHandler = (e) => {
       el.classList.remove("activeNav");
     });
   }
+  const headerEl = document.querySelector("header");
 
   if (window.scrollY <= 1) {
-    document.querySelector("header").classList.add("removeBg");
-    document.querySelector("header").classList.remove("addBg");
+    headerEl.classList.add("removeBg");
+    headerEl.classList.remove("addBg");
   } else {
-    document.querySelector("header").classList.remove("removeBg");
-    document.querySelector("header").classList.add("addBg");
+    headerEl.classList.remove("removeBg");
+    headerEl.classList.add("addBg");
+    sectionListElements.forEach((el) => {
+      if (
+        el.offsetTop - 100 <= window.scrollY &&
+        el.offsetTop + el.offsetHeight >= window.scrollY
+      ) {
+        document.querySelectorAll("#navy > li > a").forEach((navEl) => {
+          if (navEl.innerText === el.querySelector("h2").innerText) {
+            navEl.classList.add("activeNav");
+          } else {
+            navEl.classList.remove("activeNav");
+          }
+        });
+      }
+    });
   }
 };
 let day = new Date();
