@@ -1,13 +1,21 @@
 const navList = ["ABOUT US", "HOW TO APPLY", "FAQS", "CONTACT US"];
+const navListFooter = navList.slice(0, -1);
 const sectionListElements = document.querySelectorAll("[id^=section-]");
 
-navList.forEach((item) => {
-  let li = document.createElement("li");
-  let listItem = document.createElement("a");
-  listItem.innerHTML = item;
-  li.appendChild(listItem);
-  document.querySelector("#navy").appendChild(li);
-});
+const createNavLink = (navItem) => {
+  navItem.forEach((item) => {
+    let li = document.createElement("li");
+    let listItem = document.createElement("a");
+    listItem.innerHTML = item;
+    li.appendChild(listItem);
+    document
+      .querySelector(navItem === navList ? "#nav-head" : "#nav-foot")
+      .appendChild(li);
+  });
+};
+
+createNavLink(navList);
+createNavLink(navListFooter);
 
 const scrollHandler = (e) => {
   e.preventDefault();
@@ -37,7 +45,7 @@ const scrollHandler = (e) => {
 
 const headerScrollHandler = (e) => {
   if (window.scrollY === 0) {
-    document.querySelectorAll("#navy > li > a").forEach((el) => {
+    document.querySelectorAll("#nav-head > li > a").forEach((el) => {
       el.classList.remove("activeNav");
     });
   }
@@ -54,7 +62,7 @@ const headerScrollHandler = (e) => {
         el.offsetTop - 100 <= window.scrollY &&
         el.offsetTop + el.offsetHeight >= window.scrollY
       ) {
-        document.querySelectorAll("#navy > li > a").forEach((navEl) => {
+        document.querySelectorAll("#nav-head > li > a").forEach((navEl) => {
           if (navEl.innerText === el.querySelector("h2").innerText) {
             navEl.classList.add("activeNav");
           } else {

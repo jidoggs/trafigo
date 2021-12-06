@@ -944,6 +944,7 @@ footer nav {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 26.5625em) {
