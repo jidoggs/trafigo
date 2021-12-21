@@ -37,12 +37,14 @@ const scrollHandler = (e) => {
 
     return positionObj;
   };
-
-  window.scrollTo({
-    top: clickScroll(values).top,
-    left: clickScroll(values).left,
-    behavior: "smooth",
-  });
+  document.body.animate(
+    window.scrollTo({
+      top: clickScroll(values).top,
+      left: clickScroll(values).left,
+      behavior: "smooth",
+    }),
+    1000
+  );
 };
 
 const headerScrollHandler = (e) => {
