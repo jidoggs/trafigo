@@ -703,10 +703,21 @@ header .mobile-nav-btn {
   height: 1.25rem;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  transition: transform ease 0.5s;
 }
 
 .faq .answers {
   display: none;
+}
+.rotate::before {
+  transform: rotate(45deg) !important;
+  transition: transform ease 0.5s;
+}
+
+.faq .answers-show {
+  display: block;
+  padding-top: inherit;
+  color: #ee4d47;
 }
 
 .contact {

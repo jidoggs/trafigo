@@ -2,6 +2,7 @@ const navList = ["ABOUT US", "HOW TO APPLY", "FAQS", "CONTACT US"];
 const navListFooter = navList.slice(0, -1);
 const sectionListElements = document.querySelectorAll("[id^=section-]");
 const headerEl = document.querySelector("header");
+const faq = document.getElementById("questions");
 
 const createNavLink = (navItem) => {
   navItem.forEach((item) => {
@@ -73,11 +74,19 @@ const headerScrollHandler = (e) => {
     });
   }
 };
+const faqHandler = (e) => {
+  if (e.target.querySelector("ul")) {
+    e.target.closest("li").classList.toggle("rotate");
+    e.target.querySelector("ul").classList.toggle("answers-show");
+  }
+};
 let day = new Date();
 document.getElementById("cp-year").textContent = day.getFullYear();
 
 document
   .querySelectorAll("nav")
   .forEach((el) => el.addEventListener("click", scrollHandler));
+
+faq.addEventListener("click", faqHandler);
 
 window.addEventListener("scroll", headerScrollHandler);
