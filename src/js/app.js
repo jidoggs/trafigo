@@ -1,6 +1,7 @@
 const navList = ["ABOUT US", "HOW TO APPLY", "FAQS", "CONTACT US"];
 const navListFooter = navList.slice(0, -1);
 const sectionListElements = document.querySelectorAll("[id^=section-]");
+const headerEl = document.querySelector("header");
 
 const createNavLink = (navItem) => {
   navItem.forEach((item) => {
@@ -28,7 +29,7 @@ const scrollHandler = (e) => {
     let positionObj = {};
     sectionListElements.forEach((el) => {
       if (val === el.querySelector("h2").innerText) {
-        positionObj.top = el.offsetTop - 100;
+        positionObj.top = el.offsetTop - headerEl.offsetHeight;
         positionObj.left = el.offsetLeft;
       }
     });
@@ -44,12 +45,11 @@ const scrollHandler = (e) => {
 };
 
 const headerScrollHandler = (e) => {
-  if (window.scrollY === 0) {
+  if (window.scrollY <= document.querySelector(".hero").offsetHeight) {
     document.querySelectorAll("#nav-head > li > a").forEach((el) => {
       el.classList.remove("activeNav");
     });
   }
-  const headerEl = document.querySelector("header");
 
   if (window.scrollY <= 1) {
     headerEl.classList.add("removeBg");
@@ -59,7 +59,7 @@ const headerScrollHandler = (e) => {
     headerEl.classList.add("addBg");
     sectionListElements.forEach((el) => {
       if (
-        el.offsetTop - 100 <= window.scrollY &&
+        el.offsetTop - headerEl.offsetHeight <= window.scrollY &&
         el.offsetTop + el.offsetHeight >= window.scrollY
       ) {
         document.querySelectorAll("#nav-head > li > a").forEach((navEl) => {
@@ -74,7 +74,7 @@ const headerScrollHandler = (e) => {
   }
 };
 let day = new Date();
-document.getElementById("cp-year").innerText = day.getFullYear();
+document.getElementById("cp-year").textContent = day.getFullYear();
 
 document
   .querySelectorAll("nav")
